@@ -2,13 +2,13 @@
     "id": "{F8CBACC3-6D51-9C88-58FF-3D7EBDF213B5}",
     "name": "TopologyRoom",
     "type": 3,
-    "vendor": "Wolfgang Joebstl",
+    "vendor": "Room",
     "aliases": [
-        ""
+        "Raum in Topologie"
     ],
     "parentRequirements": [],
     "childRequirements": [],
     "implemented": [],
     "prefix": "TOPR",
-    "url": "https://github.com/wolfgangjoebstl/TopologyMappingLibrary"
+    "url": "https://github.com/wolfgangjoebstl/TopologyMappingLibrary/tree/master/TopologyRoom"
 }

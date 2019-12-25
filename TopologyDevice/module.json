@@ -2,11 +2,13 @@
     "id": "{5F6703F2-C638-B4FA-8986-C664F7F6319D}",
     "name": "TopologyDevice",
     "type": 3,
-    "vendor": "",
-    "aliases": [],
+    "vendor": "Device",
+    "aliases": [
+		"Gerät in Topologie"
+	],
     "parentRequirements": [],
     "childRequirements": [],
     "implemented": [],
     "prefix": "TOPD",
-    "url": ""
+    "url": "https://github.com/wolfgangjoebstl/TopologyMappingLibrary/tree/master/TopologyDevice"
 }
