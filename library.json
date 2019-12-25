@@ -1,0 +1,12 @@
+{
+    "id": "{20F485D0-FFE3-4302-F33F-A42EC02826B3}",
+    "author": "Wolfgang Jöbstl",
+    "name": "TopologyMappingLibrary",
+    "url": "https://github.com/wolfgangjoebstl/TopologyMappingLibrary",
+    "compatibility": {
+        "version": "5.0"
+    },
+    "version": "1.0",
+    "build": 0,
+    "date": 0
+}
