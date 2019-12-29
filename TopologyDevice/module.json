@@ -2,7 +2,7 @@
     "id": "{5F6703F2-C638-B4FA-8986-C664F7F6319D}",
     "name": "TopologyDevice",
     "type": 3,
-    "vendor": "Device",
+    "vendor": "Topology",
     "aliases": [
 		"Gerät in Topologie"
 	],

@@ -2,7 +2,7 @@
     "id": "{F8CBACC3-6D51-9C88-58FF-3D7EBDF213B5}",
     "name": "TopologyRoom",
     "type": 3,
-    "vendor": "Room",
+    "vendor": "Topology",
     "aliases": [
         "Raum in Topologie"
     ],
