@@ -71,9 +71,9 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 			echo "Aufruf SetInstances erfolgt, gerade eben.\n";
 			}
 
-		public function SetDeviceList(): void
+		public function SetDeviceList($config): void
 			{
-			echo "Aufruf SetDeviceList erfolgt, gerade eben.\n";
+			echo "Aufruf SetDeviceList mit $config erfolgt, gerade eben.\n";
 			}
 
 		private function RegisterProperties(): void
