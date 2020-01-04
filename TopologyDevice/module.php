@@ -45,26 +45,58 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 
 
 		public function ApplyChanges()
-		{
+			{
 			//Never delete this line!
 			parent::ApplyChanges();
-		}
+			
+			$this->RegisterVariables();
+
+			$this->SetInstanceStatus();			
+			
+			}
 
 
 		/**
 		 * Die folgenden Funktionen stehen automatisch zur Verfügung, wenn das Modul über die "Module Control" eingefügt wurden.
-		 * Die Funktionen werden, mit dem selbst eingerichteten Prefix  - hier tOIPD - in PHP und JSON-RPC wie folgt zur Verfügung gestellt:.
+		 * Die Funktionen werden, mit dem selbst eingerichteten Prefix  - hier TOPD - in PHP und JSON-RPC wie folgt zur Verfügung gestellt:.
 		 */
 		 
 		public function CreateReport(): void
 			{
-			echo "Aufruf erfolgt.\n";
+			echo "Aufruf CreateReport erfolgt, gerade eben.\n";
+			}
+
+		public function SetInstances(): void
+			{
+			echo "Aufruf SetInstances erfolgt, gerade eben.\n";
+			}
+
+		public function SetDeviceList(): void
+			{
+			echo "Aufruf SetDeviceList erfolgt, gerade eben.\n";
 			}
 
 		private function RegisterProperties(): void
 			{
 			$this->RegisterPropertyInteger('UpdateInterval', 0);
-			echo "RegisterProperties done.\n";
+			//echo "RegisterProperties done.\n";			// kommt als Warning
+			}
+
+		private function RegisterVariables(): void
+			{
+			$this->RegisterVariableString('DeviceList', 'Device Liste', '', 1);
+			}
+ 
+		 private function SetInstanceStatus(): void
+			{
+			if ($this->HasActiveParent()) 
+				{
+				$this->SetStatus(IS_ACTIVE);
+				} 
+			else 
+				{
+				$this->SetStatus(IS_INACTIVE);
+				}
 			}
 
 	}
