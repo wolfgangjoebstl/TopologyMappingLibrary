@@ -73,7 +73,28 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 
 		public function SetDeviceList($config): void
 			{
-			echo "Aufruf SetDeviceList mit $config erfolgt, gerade eben.\n";
+			if (is_array($config))
+				{
+				echo "Aufruf SetDeviceList mit folgendem Array erfolgt:\n";
+				print_r($config);
+				foreach ($config as $order => $instance)
+					{
+					$ident=str_replace([" ","/",":","-"],"_",$instance["NAME"]).$instance["OID"];
+					$ident=str_replace("ü","ue",$ident);
+					echo "   Anlegen der neuen Variable mit Identifier $ident.\n";
+					$this->RegisterVariableString($ident, $instance["NAME"], '', $order);
+					$oid=$this->GetIDForIdent($ident);
+					$newconfig=json_encode($instance);
+					echo "       war erfolgreich. Die neue ID is $oid.\n";
+					//IPS_SetIcon($oid,"Tree");   /funktioniert nicht in der Instanz Umgebung, kein direkter Zugriff möglich 
+					$this->SetValue($ident,$newconfig);
+					}
+				}
+			else
+				{
+				echo "Aufruf SetDeviceList mit $config erfolgt, gerade eben.\n";
+				$this->SetValue('DeviceList',$config);
+				}
 			}
 
 		private function RegisterProperties(): void
@@ -84,7 +105,8 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 
 		private function RegisterVariables(): void
 			{
-			$this->RegisterVariableString('DeviceList', 'Device Liste', '', 1);
+			/* integer RegisterVariableString (string $Ident, string $Name, string $Profil, integer $Position) */
+			$this->RegisterVariableString('DeviceList', 'Device Liste', '', 1000);
 			}
  
 		 private function SetInstanceStatus(): void

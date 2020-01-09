@@ -12,6 +12,6 @@
 	[
 		{ "code": 101, "icon": "active", "caption": "Device was created" },
 		{ "code": 102, "icon": "active", "caption": "Device is active" },
-		{ "code": 103, "icon": "active", "caption": "Device was deleted" },
+		{ "code": 103, "icon": "active", "caption": "Device was deleted" }
 	]
 }
