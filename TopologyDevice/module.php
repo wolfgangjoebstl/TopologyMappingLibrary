@@ -75,19 +75,30 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 			{
 			if (is_array($config))
 				{
-				echo "Aufruf SetDeviceList mit folgendem Array erfolgt:\n";
-				print_r($config);
 				foreach ($config as $order => $instance)
 					{
-					$ident=str_replace([" ","/",":","-"],"_",$instance["NAME"]).$instance["OID"];
+					$newconfig=json_encode($instance);						// Diese Config soll gespeichert werden
+					$ident=str_replace([" ","/",":","-"],"_",$instance["NAME"])."_".$instance["OID"];
 					$ident=str_replace("ü","ue",$ident);
-					echo "   Anlegen der neuen Variable mit Identifier $ident.\n";
-					$this->RegisterVariableString($ident, $instance["NAME"], '', $order);
-					$oid=$this->GetIDForIdent($ident);
-					$newconfig=json_encode($instance);
-					echo "       war erfolgreich. Die neue ID is $oid.\n";
-					//IPS_SetIcon($oid,"Tree");   /funktioniert nicht in der Instanz Umgebung, kein direkter Zugriff möglich 
-					$this->SetValue($ident,$newconfig);
+					$ID=@$this->GetIDForIdent($ident);
+					if ($ID === false)
+						{
+						echo "Aufruf SetDeviceList mit folgendem Array erfolgt:\n";
+						print_r($config);						
+						echo "   Anlegen der neuen Variable mit Identifier $ident.\n";
+						$this->RegisterVariableString($ident, $instance["NAME"], '', $order);
+						$oid=$this->GetIDForIdent($ident);
+						echo "       war erfolgreich. Die neue ID is $oid.\n";
+						//IPS_SetIcon($oid,"Tree");   /funktioniert nicht in der Instanz Umgebung, kein direkter Zugriff möglich 
+						$this->SetValue($ident,$newconfig);
+						}
+					elseif ($newconfig !== $this->GetValue($ident))
+						{
+						echo "Aufruf SetDeviceList mit folgendem Array erfolgt:\n";
+						print_r($config);						
+						echo "Neue Konfiguration speichern $newconfig \n";
+						$this->SetValue($ident,$newconfig);						
+						}
 					}
 				}
 			else
