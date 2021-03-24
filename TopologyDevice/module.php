@@ -79,7 +79,10 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 					{
 					$newconfig=json_encode($instance);						// Diese Config soll gespeichert werden
 					$ident=str_replace([" ","/",":","-"],"_",$instance["NAME"])."_".$instance["OID"];
-					$ident=str_replace("ü","ue",$ident);
+					$ident=str_replace("ü","ue",$ident);				// zumindest ein paar Sonderzeichen umwandeln
+					$ident=str_replace("ä","ae",$ident);
+					$ident=str_replace("Ö","oe",$ident);
+					$ident=str_replace(["(",")"],"",$ident);			// Klammern wegnehmen
 					$ID=@$this->GetIDForIdent($ident);
 					if ($ID === false)
 						{
