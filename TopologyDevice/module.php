@@ -82,7 +82,7 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 					$ident=str_replace("ü","ue",$ident);				// zumindest ein paar Sonderzeichen umwandeln
 					$ident=str_replace("ä","ae",$ident);
 					$ident=str_replace("Ö","oe",$ident);
-					$ident=str_replace(["(",")"],"",$ident);			// Klammern wegnehmen
+					$ident=str_replace(["(",")","'"],"",$ident);			// Klammern und Apostroph wegnehmen
 					$ID=@$this->GetIDForIdent($ident);
 					if ($ID === false)
 						{
