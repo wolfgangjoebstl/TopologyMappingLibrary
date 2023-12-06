@@ -114,6 +114,7 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 		private function RegisterProperties(): void
 			{
 			$this->RegisterPropertyInteger('UpdateInterval', 0);
+			$this->RegisterPropertyString('UID', "");
 			//echo "RegisterProperties done.\n";			// kommt als Warning
 			}
 
