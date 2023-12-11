@@ -4,11 +4,27 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 	
 	class TopologyDeviceGroup extends IPSModule {
 
+		/* optionale function, überschreibt die Parent function. Sicherheitshalber default maessig einfügen.
+		 * Der Konstruktor wird bei jeglichem Funktionsaufruf aufgerufen und kümmert sich um die Instanzierung. 
+		 * Die Basisklasse nutzt den Konstruktor um z.B. die InstanzID zu setzen.
+		 *
+		 */
+		 
+		public function __construct($InstanceID)
+			{
+			parent::__construct($InstanceID);
+			}
+			
+		/*
+		 * Im Gegensatz zu Construct wird diese Funktion nur einmalig beim Erstellen der Instanz und Start von IP-Symcon aufgerufen. 
+		 * Deshalb sollten hier Statusvariablen und Modul-Eigenschaften erstellt werden, die das Modul dauerhaft braucht.
+		 *
+		 */
 		public function Create()
-		{
-			//Never delete this line!
-			parent::Create();
-		}
+			{
+			parent::Create();						//Never delete this line!
+			$this->RegisterProperties();
+			}
 
 		public function Destroy()
 		{
@@ -36,5 +52,11 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 			
 			}
 
-
+		private function RegisterProperties(): void
+			{
+			$this->RegisterPropertyInteger('UpdateInterval', 0);
+			$this->RegisterPropertyString('UID', "");
+			//echo "RegisterProperties done.\n";			// kommt als Warning
+			}
+			
 	}
