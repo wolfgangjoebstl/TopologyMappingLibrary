@@ -21,11 +21,18 @@ trait TopologyLibrary
 			$this->RegisterPropertyInteger('UpdateInterval', 0);				// general Requirement
 			$this->RegisterPropertyString('UUID', "");							// unified unique idm generated with uuid-v4
 			$this->RegisterPropertyString('UniqueName', "");					// Name is not unique, several "Wohnzimmer"  but only one unique Wohnzimmer__1
+			$this->RegisterPropertyString('Path', "");								// Path is also a unique identifier
 			
+			// test some functions
+			$this->RegisterPropertyBoolean('Open', false);					// Some status, just trying
+			$this->RegisterPropertyInteger('ImportCategoryID', 0);			// let Category select
+			
+			$this->RegisterAttributeString('TopologySessionToken', '');
+			$this->RegisterAttributeString('TopologyUserAuthToken', '');			
 			//echo "RegisterProperties done.\n";			// kommt als Warning
 			}
 			
-		protected function uuid-v4() 
+		protected function uuid_v4() 
 				{
 				return sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
 

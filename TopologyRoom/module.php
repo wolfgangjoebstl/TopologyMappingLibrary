@@ -1,9 +1,17 @@
 <?php
-	
+
+/* Module class TopologyRoom
+ *
+ */
+ 
+declare(strict_types=1); 		// tell PHP to throw type errors when you try to (accidentally) cast primitive values
+ 
 require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";	
 	
 	class TopologyRoom extends IPSModule {
 
+		use IPSymconTopologyMappingLibrary\TopologyLibrary;
+		
 		/* optionale function, überschreibt die Parent function. Sicherheitshalber default maessig einfügen.
 		 * Der Konstruktor wird bei jeglichem Funktionsaufruf aufgerufen und kümmert sich um die Instanzierung. 
 		 * Die Basisklasse nutzt den Konstruktor um z.B. die InstanzID zu setzen.
@@ -17,8 +25,7 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 			
 		public function Create()
 		{
-			//Never delete this line!
-			parent::Create();
+			parent::Create();					//Never delete this line!
 			$this->RegisterProperties();
 		}
 
@@ -50,8 +57,8 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 
 		private function RegisterProperties(): void
 			{
-			$this->RegisterPropertyInteger('UpdateInterval', 0);
-			$this->RegisterPropertyString('UID', "");
+			$this->AddRegisterProperties();				// für alle Topology Instanzen gleich
+
 			//echo "RegisterProperties done.\n";			// kommt als Warning
 			}
 

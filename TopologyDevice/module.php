@@ -23,7 +23,6 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 			parent::__construct($InstanceID);
 			}
 
-
 		/*
 		 * Im Gegensatz zu Construct wird diese Funktion nur einmalig beim Erstellen der Instanz und Start von IP-Symcon aufgerufen. 
 		 * Deshalb sollten hier Statusvariablen und Modul-Eigenschaften erstellt werden, die das Modul dauerhaft braucht.

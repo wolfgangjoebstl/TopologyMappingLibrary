@@ -1,8 +1,16 @@
 <?php
-	
+
+/* Module class TopologyPlace
+ *
+ */
+
+declare(strict_types=1); 
+
 require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";	
 	
 	class TopologyPlace extends IPSModule {
+		
+		use IPSymconTopologyMappingLibrary\TopologyLibrary;
 
 		/* optionale function, überschreibt die Parent function. Sicherheitshalber default maessig einfügen.
 		 * Der Konstruktor wird bei jeglichem Funktionsaufruf aufgerufen und kümmert sich um die Instanzierung. 
@@ -14,11 +22,15 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 			{
 			parent::__construct($InstanceID);
 			}
-			
+		
+		/*
+		 * Im Gegensatz zu Construct wird diese Funktion nur einmalig beim Erstellen der Instanz und Start von IP-Symcon aufgerufen. 
+		 * Deshalb sollten hier Statusvariablen und Modul-Eigenschaften erstellt werden, die das Modul dauerhaft braucht.
+		 *
+		 */	
 		public function Create()
 		{
-			//Never delete this line!
-			parent::Create();
+			parent::Create();					//Never delete this line!
 			$this->RegisterProperties();
 		}
 
@@ -50,8 +62,8 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 
 		private function RegisterProperties(): void
 			{
-			$this->RegisterPropertyInteger('UpdateInterval', 0);
-			$this->RegisterPropertyString('UID', "");
+			$this->AddRegisterProperties();				// für alle Topology Instanzen gleich
+			
 			//echo "RegisterProperties done.\n";			// kommt als Warning
 			}
 			
