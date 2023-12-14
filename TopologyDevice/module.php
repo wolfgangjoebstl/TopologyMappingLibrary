@@ -135,4 +135,13 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 				}
 			}
 
+
+		/**
+		 *
+		 */
+		public function getConfig()
+		{
+
+		}
+
 	}

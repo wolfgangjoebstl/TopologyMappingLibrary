@@ -66,5 +66,13 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 			
 			//echo "RegisterProperties done.\n";			// kommt als Warning
 			}
-			
+		
+		/**
+		 *
+		 */
+		public function getConfig()
+		{
+
+		}
+		
 	}

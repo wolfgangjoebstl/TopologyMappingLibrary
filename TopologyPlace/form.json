@@ -12,7 +12,7 @@
     "actions": 
 	[
 	    { "type": "Label",  "label": "Activate this Instance" },
-		{ "type": "Button", "label": "Read configuration", "onClick": "HarmonyHub_getConfig($id);" },
+		{ "type": "Button", "label": "Read configuration", "onClick": "TOPD_getConfig($id);" },
 	],
     "status": 
 	[

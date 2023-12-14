@@ -31,6 +31,95 @@ trait TopologyLibrary
 			$this->RegisterAttributeString('TopologyUserAuthToken', '');			
 			//echo "RegisterProperties done.\n";			// kommt als Warning
 			}
+
+
+		/**
+		 * return form actions by token.
+		 *
+		 * @return array
+		 */
+		protected function FormActions()
+		{
+			$form = [
+				[
+					'type'    => 'Label',
+					'caption' => '1. Read Logitech Harmony Hub configuration:', ],
+				[
+					'type'    => 'Button',
+					'caption' => 'Read configuration',
+					'onClick' => 'HarmonyHub_getConfig($id);', ],
+				[
+					'type'    => 'Label',
+					'caption' => '2. Setup Harmony Activities:', ],
+				[
+					'type'    => 'Button',
+					'caption' => 'Setup Harmony',
+					'onClick' => 'HarmonyHub_SetupHarmony($id);', ],
+				[
+					'type'    => 'Label',
+					'caption' => '3. close this instance and open the Harmony configurator for setup of the devices.', ],
+				[
+					'type'    => 'Label',
+					'caption' => 'reload firmware version and Logitech Harmony Hub name:', ],
+				[
+					'type'    => 'Button',
+					'caption' => 'update Harmony info',
+					'onClick' => 'HarmonyHub_getDiscoveryInfo($id);', ], ];
+
+			return $form;
+		}
+
+		/**
+		 * return from status.
+		 *
+		 * @return array
+		 */
+		protected function FormStatus()
+		{
+			$form = [
+				[
+					'code'    => 101,
+					'icon'    => 'inactive',
+					'caption' => 'Creating instance.', ],
+				[
+					'code'    => 102,
+					'icon'    => 'active',
+					'caption' => 'Harmony Hub accessible.', ],
+				[
+					'code'    => 104,
+					'icon'    => 'inactive',
+					'caption' => 'interface closed.', ],
+				[
+					'code'    => 201,
+					'icon'    => 'inactive',
+					'caption' => 'Please follow the instructions.', ],
+				[
+					'code'    => 202,
+					'icon'    => 'error',
+					'caption' => 'Harmony Hub IP adress must not empty.', ],
+				[
+					'code'    => 203,
+					'icon'    => 'error',
+					'caption' => 'No valid IP adress.', ],
+				[
+					'code'    => 204,
+					'icon'    => 'error',
+					'caption' => 'connection to the Harmony Hub lost.', ],
+				[
+					'code'    => 205,
+					'icon'    => 'error',
+					'caption' => 'field must not be empty.', ],
+				[
+					'code'    => 206,
+					'icon'    => 'error',
+					'caption' => 'select category for import.', ],
+				[
+					'code'    => 207,
+					'icon'    => 'error',
+					'caption' => 'Harmony Hub IO not found.', ], ];
+
+			return $form;
+		}
 			
 		protected function uuid_v4() 
 				{
