@@ -1,13 +1,17 @@
 <?php
 
+/* Module class TopologyDevice
+ *
+ */
 
+declare(strict_types=1);
 
 require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";	
 
-
 	class TopologyDevice extends IPSModule {
 
-
+		use IPSymconTopologyMappingLibrary\TopologyLibrary;
+		
 		/* optionale function, überschreibt die Parent function. Sicherheitshalber default maessig einfügen.
 		 * Der Konstruktor wird bei jeglichem Funktionsaufruf aufgerufen und kümmert sich um die Instanzierung. 
 		 * Die Basisklasse nutzt den Konstruktor um z.B. die InstanzID zu setzen.
@@ -24,16 +28,11 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 		 * Im Gegensatz zu Construct wird diese Funktion nur einmalig beim Erstellen der Instanz und Start von IP-Symcon aufgerufen. 
 		 * Deshalb sollten hier Statusvariablen und Modul-Eigenschaften erstellt werden, die das Modul dauerhaft braucht.
 		 *
-		 */
-		 
+		 */		 
 		public function Create()
 			{
-			//Never delete this line!
-			parent::Create();
-			
+			parent::Create();							//Never delete this line!
 			$this->RegisterProperties();
-
-		
 			}
 
 		public function Destroy()
@@ -111,34 +110,11 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 				}
 			}
 
-		private function uuid-v4() 
-				{
-				return sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
-
-					// 32 bits for "time_low"
-					mt_rand(0, 0xffff), mt_rand(0, 0xffff),
-
-					// 16 bits for "time_mid"
-					mt_rand(0, 0xffff),
-
-					// 16 bits for "time_hi_and_version",
-					// four most significant bits holds version number 4
-					mt_rand(0, 0x0fff) | 0x4000,
-
-					// 16 bits, 8 bits for "clk_seq_hi_res",
-					// 8 bits for "clk_seq_low",
-					// two most significant bits holds zero and one for variant DCE1.1
-					mt_rand(0, 0x3fff) | 0x8000,
-
-					// 48 bits for "node"
-					mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xffff)
-					);
-				}
 		
 		private function RegisterProperties(): void
 			{
-			$this->RegisterPropertyInteger('UpdateInterval', 0);
-			$this->RegisterPropertyString('UID', "");
+			$this->AddRegisterProperties();				// für alle Topology Instanzen gleich
+
 			//echo "RegisterProperties done.\n";			// kommt als Warning
 			}
 
