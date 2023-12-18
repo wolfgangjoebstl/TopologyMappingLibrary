@@ -4,7 +4,7 @@
     "type": 3,
     "vendor": "Topology",
     "aliases": [
-		"Gerät in Topologie"
+		"TopologyDevice"
 	],
     "parentRequirements": [],
     "childRequirements": [],

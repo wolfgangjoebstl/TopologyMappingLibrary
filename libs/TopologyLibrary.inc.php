@@ -121,7 +121,7 @@ trait TopologyLibrary
 			return $form;
 		}
 			
-		protected function uuid_v4() 
+		protected function Uuid_v4() 
 				{
 				return sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
 

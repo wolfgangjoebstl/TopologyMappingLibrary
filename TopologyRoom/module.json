@@ -4,7 +4,7 @@
     "type": 3,
     "vendor": "Topology",
     "aliases": [
-        "Raum in Topologie"
+        "TopologyRoom"
     ],
     "parentRequirements": [],
     "childRequirements": [],

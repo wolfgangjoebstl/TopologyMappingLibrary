@@ -2,12 +2,12 @@
     "elements": 
 	[
 		{ "type": "Label", "caption": "If the report should be created automatically select an update interval"},
-		{ "type": "NumberSpinner", "name": "UpdateInterval", "caption": "Update Interval", "suffix": "Minutes" }
+		{ "type": "NumberSpinner", "name": "UpdateInterval", "caption": "Update Interval", "suffix": "Minutes" },
 
 		{ "type": "Label", "caption": "Open whatever you think you open"},
 		{ "type": "CheckBox", "name": "Open", "caption": "Open" },
 		
-		{ "type": "SelectCategory", "name": "ImportCategoryID", "caption": "Harmony Hub devices" },
+		{ "type": "SelectCategory", "name": "ImportCategoryID", "caption": "Topology devices start here" }
 	],
     "actions": 
 	[
