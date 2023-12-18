@@ -61,12 +61,6 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 			
 			
 			}
-        public function createUuid() 
-			{
-            return($this->Uuid_v4());
-			
-			
-			}
 
 		private function RegisterProperties(): void
 			{
