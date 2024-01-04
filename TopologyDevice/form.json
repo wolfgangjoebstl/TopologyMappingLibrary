@@ -3,7 +3,7 @@
 	[
 		{ "type": "Label", "caption": "If the report should be created automatically select an update interval"},
 		{ "type": "NumberSpinner", "name": "UpdateInterval", "caption": "Update Interval", "suffix": "Minutes" },
-		{ "type": "ValidationTextBox", "name": "Uuid", "caption": "Unique Universal ID" },
+		{ "type": "ValidationTextBox", "name": "UUID", "caption": "Unique Universal ID" },
 		{ "type": "ValidationTextBox", "name": "Path", "caption": "Category Path" },
 		{ "type": "ValidationTextBox", "name": "UniqueName", "caption": "Unique Name" },
 
