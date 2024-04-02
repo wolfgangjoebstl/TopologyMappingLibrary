@@ -1,13 +1,21 @@
 <?php
 
 /*
-* Topology Library class
+* Topology Library class, Date 2024-03-08
 *
 * implementation base on: "https://github.com/wolfgangjoebstl/TopologyMappingLibrary
 * 
 * IPSymconTopologyMappingLibrary
 *
 * include class as trait
+*		AddRegisterProperties			UpdateInterval, UUID, UniqueName, Path, 
+*										Open, ImportCategoryID,
+*										TopologySessionToken, TopologyUserAuthToken
+*		FormActions
+*		FormStatus
+*		Uuid_v4
+*
+*
 *
 */
 

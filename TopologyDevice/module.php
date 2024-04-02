@@ -1,6 +1,22 @@
 <?php
 
-/* Module class TopologyDevice
+/* Module class TopologyDevice extends IPSModule
+ * dieses Module stellt Basisfunktionen zur Verfügung, zB getIdforIdent
+ * https://www.symcon.de/en/service/documentation/developer-area/sdk-tools/sdk-php/module/getidforident/
+ *
+ *		__construct		Parent construct
+ *		Create			Parent create und register Properties
+ *		Destroy			Parent destroy
+ *		ApplyChanges	Parent Apply changes, register Variables set status Instance
+ *
+ *		CreateReport	TOPD_
+ *		SetInstances	TOPD_
+ * 		SetDeviceList	TOPD_..(config)
+ *		createUuid
+ *		RegisterProperties
+ *		RegisterVariables
+ *		SetInstanceStatus
+ *		getConfig
  *
  */
 
@@ -100,6 +116,9 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 						echo "Neue Konfiguration speichern $newconfig \n";
 						$this->SetValue($ident,$newconfig);						
 						}
+					$oid=$this->GetIDForIdent($ident);
+					IPS_SetHidden($oid,true);
+						
 					}
 				}
 			else
