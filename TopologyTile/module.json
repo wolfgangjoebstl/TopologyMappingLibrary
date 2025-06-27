@@ -1,0 +1,14 @@
+{
+    "id": "{CF1DCB80-0E14-7524-5CA8-F10631B11550}",
+    "name": "TopologyTile",
+    "type": 3,
+    "vendor": "",
+    "aliases": [
+        "TopologyTile"
+    ],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "TOPT",
+    "url": ""
+}
