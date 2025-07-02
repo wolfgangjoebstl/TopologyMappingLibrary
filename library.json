@@ -4,7 +4,7 @@
     "name": "TopologyMappingLibrary",
     "url": "https://github.com/wolfgangjoebstl/TopologyMappingLibrary",
     "compatibility": {
-        "version": "7.1"
+        "version": "6.1"
     },
     "version": "1.1",
     "build": 3,
