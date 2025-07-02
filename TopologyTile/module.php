@@ -41,7 +41,7 @@ require_once __DIR__ . "/../libs/TopologyLibrary.inc.php";
 			}
 		}
 		
-		void GetVisualizationTile1() {
+		public function GetVisualizationTile1() {
 			// Füge ein Skript hinzu, um beim laden, analog zu Änderungen bei Laufzeit, die Werte zu setzen
             // Obwohl die Rückgabe von GetFullUpdateMessage ja schon JSON-codiert ist wird dennoch ein weiteres mal json_encode ausgeführt
             // Damit wird dem String Anführungszeichen hinzugefügt und eventuelle Anführungszeichen innerhalb werden korrekt escaped
