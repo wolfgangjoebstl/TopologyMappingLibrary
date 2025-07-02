@@ -1,0 +1,14 @@
+{
+    "id": "{6F60D78B-9313-8365-5743-FE0106544F58}",
+    "name": "TopologyShow",
+    "type": 3,
+    "vendor": "Topology",
+    "aliases": [
+        "TopologyShow"
+    ],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "TOPS",
+    "url": "https://github.com/wolfgangjoebstl/TopologyMappingLibrary/tree/master/TopologyShow"
+}
